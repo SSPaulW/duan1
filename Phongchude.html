@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChitChat - Chọn phòng trò chuyện</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4799eb",
+            "background-light": "#E0F7FA", // Pastel Blue Background
+            "background-dark": "#111921",
+            "accent-pink": "#FFCDD2", // Pastel Pink Accent
+            "accent-blue": "#B2EBF2", // Darker Pastel Blue Accent
+            "text-main": "#424242" // Dark Gray Text
+          },
+          fontFamily: {
+            "display": ["Spline Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<div class="flex flex-1">
+<aside class="flex flex-col w-64 p-4 bg-white/50 dark:bg-background-dark/50">
+<div class="flex flex-col gap-4 sticky top-4">
+<div class="flex gap-3 items-center px-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cute application logo with pastel colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGwjn6z8loY6WiVU_b8by-zdyJiptpFzmQMrx8G30-mZQiJVGw6i2Pyqo4SBq8RybzwdqsKsKfYWJfZMlllK7JEiwv5R0x0jlNERq7Yj5Q4pFoX7_7Tmj826vxxPLKq6G42iA2kEAA0fpf1A3p9ta4a-NjJi6kn-cgi6rGAW2XuTpAaeV3puceykJc9FzRWI-OfscVOerye2C_WKdhCaPHes7ITfaOUrsDLcdBcGfaqQrHtSqxNh533KobKs41si_cppSTRcK0GNie");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-base font-bold leading-normal">ChitChat</h1>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Chào bạn!</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-full" href="#">
+<span class="material-symbols-outlined text-text-main">home</span>
+<p class="text-text-main text-sm font-medium leading-normal">Trang chủ</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full bg-accent-pink" href="#">
+<span class="material-symbols-outlined fill text-text-main">chat_bubble</span>
+<p class="text-text-main text-sm font-medium leading-normal">Tin nhắn</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full" href="#">
+<span class="material-symbols-outlined text-text-main">notifications</span>
+<p class="text-text-main text-sm font-medium leading-normal">Thông báo</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full" href="#">
+<span class="material-symbols-outlined text-text-main">account_circle</span>
+<p class="text-text-main text-sm font-medium leading-normal">Hồ sơ</p>
+</a>
+</nav>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-accent-pink text-text-main text-sm font-bold leading-normal tracking-[0.015em] mt-auto sticky bottom-4">
+<span class="material-symbols-outlined mr-2">add</span>
+<span class="truncate">Tạo phòng mới</span>
+</button>
+</aside>
+<main class="flex-1 p-8">
+<div class="max-w-4xl mx-auto">
+<div class="flex flex-wrap justify-between gap-3 mb-4">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-text-main text-4xl font-black leading-tight tracking-[-0.033em]">Chọn một phòng để chia sẻ</h1>
+<p class="text-text-main/70 text-base font-normal leading-normal">Nơi bạn có thể tìm thấy sự đồng cảm và kết nối.</p>
+</div>
+</div>
+<div class="py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-text-main/70 flex border-none bg-white items-center justify-center pl-4 rounded-l-full border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-text-main focus:outline-0 focus:ring-0 border-none bg-white focus:border-none h-full placeholder:text-text-main/70 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Tìm kiếm chủ đề bạn quan tâm..." value=""/>
+</div>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">112 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Áp lực học tập</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Cùng chia sẻ và vượt qua áp lực học đường.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of books and a pencil" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6NyiuaLsCvAvHRxLPkKIeaR5yvGmY0eKCHAMK6RBAGJmscjcb_Ggkb_PlTtjfLtUtDXI0KaC26c52O_xd5urWj1_6hiMLe7XnNCCI1bu1OC1N5uj4a1PfKeY_S5cSogM4HTyComweSgKzfGypQtLFymrZvuOhl-VIkmxMjSs8m_EEdT4tonir6gUrwQ1NlOEfmqK1iM9DiNKF4OosPO5CMzRvbrGfURyQXKSdcSf7eGGjA_jPXb67ZQxIXdw55ideegseJkWfyIw8");'></div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">85 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Gia đình và quan hệ</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Nơi lắng nghe những tâm sự về gia đình.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of a family" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtdf-_D0rxDjuxORPaPw0ka9uamqf8M3PQMEcZ2ydQVAvfPN6ogSlFRc81u_G0gvMl90_byt36KLh4ZGXdJG54RsXpQX2P6g0mCHEolplSltWP_dc4CR5HJE2GvP6MLQ9XcefV1iHuAqT4h_MMPfFzQAZ5BZW3peCu0j8Aw5IbuOlEaZ0wGA2ekStTVKPSHOuYatLkcF0zcQpqJ3a6At7clZytRmLB8rdOgfllvSOOiQpJ3b6XePh62XjZb8pN2aud4DHhy1aqtdE_");'></div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">78 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Kỹ năng sống</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Trau dồi kỹ năng để cuộc sống tốt hơn.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of a lightbulb" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUzrq6C9eIvUUQfFbUTR_g6OukdS3smJ9bE03ZN6vixgnvDllxabnW9ZgYYrcq1ODaXLHOW4rU58l5GpF-Cf72D63hzR05UytO2zlcPEKEE6rk8sUvgqgNcgSC2OjcuwS-fFnzyl0KiX4X2Qm0wX-CYWjBfKkpzRJCalIP47bC7vnsWN8NmVxifG7duVbjYH7HlM7Yh8Kd_tp_yi_yb44He58dpIADR68qR-EsALwuO2N04FxlPyxJ_S90T4eKh4fEEKlLrM8EKmEt");'></div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">63 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Tư vấn nghề nghiệp</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Định hướng tương lai, tìm kiếm đam mê.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of a compass" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-nTSyXovYwZIWmrs1cSMlXtcqgMMFTXu_EApqqpzf69QR8cNmr7MoxqIl3dKMdhl3hfdH5Giz7O23kbz9KlpPnRXMs2q19WU_NOhfFtUXMqvyIA5_jYrb8GlUFJzECyLZF1a6Zc-7Oez5ph-K4mWw_6YDnjI3l06Tv6TurqCSlxhEDN8tytvoYwiwgccBh3D2J5GNsrK5s4vuXLJoGaljmmSkgf0N8lha576k7-dcb_7oitlYISNgWO2oK1Ite3wrXInVbMm50Ycp");'></div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">56 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Trầm cảm không xấu</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Nơi an toàn để bạn là chính mình và được thấu hiểu.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of a speech bubble with a heart" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCf473SYwGSdw46yQ_Hl3sGMgFiI1UK-zHfYM8NSFfElTki4q6Khgaf1lRGt_02RjRRBdwBMFQEQ8neIL5R8YHTMS_bqB0HKq_Na2tVpB9IqZRa-mjKRAkPcOmBDWd_LwLz3_0DABV04UmxbhEBFI3nkmQm2hoCR0f6WgvUOii8GMrl23iQR2YF1JqR4Z6oPo7TFCVFUBwE_VbbqCbnzhwFdru4Uw0w4W6Ot6z1uA4uBKThMrtcH7kl9xyfTmEMyrxgT4Osifh9g98P");'></div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">132 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Lời yêu thương và chữa lành</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Cùng nhau lan toả năng lượng tích cực.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of a heart with wings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDyuI0WQayobrvNIkHVp0DZNeb4Nj7fHdLETdvLhqOerca_xQxZKlEtYTa_-6Eh9cmkEJ4X4V548Hp8IIGfdC7IGA6o0ztqfNnwIjYEmblvCmf-cSlyQLK1Jv968DZIwZOMCUGGoy4cLOdQSHjAkQkIcEJxpkMRXzRYd9GSlvgiJCGsC-nGFHqmizYbcOAyni6N038t9sey6ONwzHaZmGqyjFwPaxbvtwYWhOIk_h27G9wlLkR4RUaGEbv71XoxUhek5s6xq62LWKj0");'></div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-lg bg-white p-4 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 lg:col-span-1">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-text-main/70 text-sm font-normal leading-normal">97 thành viên</p>
+<p class="text-text-main text-base font-bold leading-tight">Chia sẻ một chút nỗi buồn</p>
+<p class="text-text-main/70 text-sm font-normal leading-normal">Nếu bạn đang có tâm sự, đừng ngần ngại.</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-lg flex-shrink-0" data-alt="Cute illustration of two friends talking" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBE_f-Sxno7gU2MUP1qdTmVofEu3Ggm42qFrQ7jNVC7bjkqzoLuN_LNYRZIC1fnGvo5hkHhFZwYoOyYA9MtrXX4Er7ToRTjf343hkywRrLnOXPWB9T-5rG2SR0lGMbXvsXZLWqDKw69oIKWy63wWcVh4VhjHTwl6AXDfCOKb2laMgMKrvf08yyv3uvDTNDXehteL3iStCzzEY5SkF6eAxf8BFTYqIsdO_k-VYFcTWQJTyUxjv8HKszjkEWfkguXqxyvu6ug59n2uRXc");'></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

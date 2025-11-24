@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emotion AI Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#A0D2EB",
+                        "secondary": "#FBC4D6",
+                        "background-light": "#FEF9E7",
+                        "background-dark": "#111921",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a2530",
+                        "text-light": "#111418",
+                        "text-dark": "#f0f2f4",
+                        "subtle-light": "#B2B2B2",
+                        "subtle-dark": "#637588",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full w-full flex-1">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col gap-8 border-r border-gray-200/50 dark:border-gray-800/50 bg-card-light dark:bg-card-dark p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User profile picture with a cute avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgUqBAuVE179CZBRV4C6jJ-L5kCy5h6pWyjh6-sBsJwv62IlgWGjgNl5bOgiTM6tRXygpQ6LKBwtRnzeYBtiC7GDvYk2uWclyW0DUFrHlRvYXunMaTyNZcc2kk_7U0Xls40jdlz2Iay-2vkU74E74tfNTqs0OGpumj1NRTiwlIsvsXqvwqS0GEXEA7XghDtPinhGoWfyx7AxWYdUUuvXvsxZLl9SqEKR3nu1ofhpV8m-VLdv_CMXNOjj51dOwtlnzmRxS7UMtHK3KD");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-light dark:text-text-dark text-base font-medium leading-normal">CutiePie</h1>
+<p class="text-subtle-light dark:text-subtle-dark text-sm font-normal leading-normal">Online</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-full px-4 py-2 hover:bg-primary/20 dark:hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">home</span>
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Trang chủ</p>
+</a>
+<a class="flex items-center gap-3 rounded-full px-4 py-2 hover:bg-primary/20 dark:hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">chat_bubble</span>
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Tin nhắn</p>
+</a>
+<a class="flex items-center gap-3 rounded-full px-4 py-2 hover:bg-primary/20 dark:hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">explore</span>
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Khám phá</p>
+</a>
+<a class="flex items-center gap-3 rounded-full px-4 py-2 hover:bg-primary/20 dark:hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">person</span>
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Hồ sơ</p>
+</a>
+<a class="flex items-center gap-3 rounded-full px-4 py-2 bg-primary/30 dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark !fill-1">spark</span>
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Emotion AI</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-full px-4 py-2 hover:bg-primary/20 dark:hover:bg-primary/10" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">settings</span>
+<p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal">Cài đặt</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-6 lg:p-10">
+<div class="mx-auto max-w-4xl">
+<!-- PageHeading -->
+<header class="flex flex-wrap items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<p class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark md:text-4xl">Nhật Ký Cảm Xúc Của Bạn</p>
+<p class="text-subtle-light dark:text-subtle-dark text-base font-normal leading-normal">Đây là phân tích cảm xúc của bạn cho ngày hôm nay.</p>
+</div>
+</header>
+<div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+<!-- Left Column -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Daily Emotion Ribbon -->
+<section class="rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-sm">
+<h2 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight">Chuỗi Cảm Xúc Trong Ngày</h2>
+<p class="text-subtle-light dark:text-subtle-dark text-base font-normal leading-normal pt-1 pb-6">Một đại diện trực quan về cảm xúc của bạn trong suốt cả ngày. Di chuột qua một biểu tượng để xem tóm tắt.</p>
+<div class="relative flex h-16 items-center rounded-full bg-primary/20 p-2 dark:bg-primary/10">
+<div class="absolute h-1 w-full bg-primary/50 dark:bg-primary/30 top-1/2 -translate-y-1/2"></div>
+<div class="relative flex w-full justify-between">
+<div class="group relative flex flex-col items-center">
+<span class="text-4xl">😄</span>
+<div class="absolute bottom-full mb-2 w-max rounded bg-secondary px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Vui vẻ lúc 9:00 AM</div>
+</div>
+<div class="group relative flex flex-col items-center">
+<span class="text-4xl">😐</span>
+<div class="absolute bottom-full mb-2 w-max rounded bg-secondary px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Bình thường lúc 11:30 AM</div>
+</div>
+<div class="group relative flex flex-col items-center">
+<span class="text-4xl">😊</span>
+<div class="absolute bottom-full mb-2 w-max rounded bg-secondary px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Hạnh phúc lúc 1:00 PM</div>
+</div>
+<div class="group relative flex flex-col items-center">
+<span class="text-4xl">😥</span>
+<div class="absolute bottom-full mb-2 w-max rounded bg-secondary px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Buồn lúc 3:15 PM</div>
+</div>
+<div class="group relative flex flex-col items-center">
+<span class="text-4xl">🤩</span>
+<div class="absolute bottom-full mb-2 w-max rounded bg-secondary px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Phấn khích lúc 8:00 PM</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Analytics & Insights -->
+<section class="flex flex-col gap-8">
+<!-- Main Analytics Dashboard -->
+<div class="rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-sm">
+<h2 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight">Tổng Quan Cảm Xúc</h2>
+<div class="mt-4 flex flex-col items-center gap-6 md:flex-row">
+<div class="relative flex h-48 w-48 items-center justify-center">
+<svg class="h-full w-full -rotate-90 transform" viewbox="0 0 36 36">
+<circle class="stroke-current text-yellow-200" cx="18" cy="18" fill="transparent" r="15.9155" stroke-width="4"></circle>
+<circle class="stroke-current text-green-300" cx="18" cy="18" fill="transparent" r="15.9155" stroke-dasharray="50, 100" stroke-dashoffset="0" stroke-width="4"></circle>
+<circle class="stroke-current text-blue-300" cx="18" cy="18" fill="transparent" r="15.9155" stroke-dasharray="30, 100" stroke-dashoffset="-50" stroke-width="4"></circle>
+<circle class="stroke-current text-pink-300" cx="18" cy="18" fill="transparent" r="15.9155" stroke-dasharray="20, 100" stroke-dashoffset="-80" stroke-width="4"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-3xl font-bold text-text-light dark:text-text-dark">✨</span>
+<span class="text-sm text-subtle-light dark:text-subtle-dark">Chủ yếu tích cực</span>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-4 md:flex-col">
+<div class="flex items-center gap-2">
+<div class="h-3 w-3 rounded-full bg-green-300"></div>
+<p class="text-sm">50% Vui vẻ</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-3 w-3 rounded-full bg-blue-300"></div>
+<p class="text-sm">30% Bình thường</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-3 w-3 rounded-full bg-pink-300"></div>
+<p class="text-sm">20% Buồn</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Insights Cards -->
+<div>
+<h2 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight px-1 mb-4">AI Gợi Ý</h2>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+<div class="flex items-start gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 shadow-sm">
+<div class="flex size-10 items-center justify-center rounded-full bg-secondary/20">
+<span class="text-xl">💖</span>
+</div>
+<div>
+<p class="font-semibold">Cảm xúc tích cực nhất</p>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Bạn cảm thấy phấn khích nhất vào buổi tối!</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-lg bg-card-light dark:bg-card-dark p-4 shadow-sm">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/20">
+<span class="text-xl">🕰️</span>
+</div>
+<div>
+<p class="font-semibold">Thời điểm vui nhất</p>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Buổi chiều là khoảng thời gian hạnh phúc nhất của bạn.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column -->
+<aside class="flex flex-col gap-8">
+<!-- CalendarPicker -->
+<div class="rounded-lg bg-card-light dark:bg-card-dark p-4 shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center justify-between p-1">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/20 dark:hover:bg-primary/10">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-lg">chevron_left</span>
+</button>
+<p class="text-text-light dark:text-text-dark flex-1 text-center text-base font-bold leading-tight">Tháng 7 2024</p>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/20 dark:hover:bg-primary/10">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-lg">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7">
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">S</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">M</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">T</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">W</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">T</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">F</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold tracking-[0.015em] text-subtle-light dark:text-subtle-dark">S</p>
+<button class="h-12 w-full text-text-light dark:text-text-dark col-start-2 text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">1</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">2</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">3</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">4</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">5</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">6</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">7</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">8</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">9</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">10</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">11</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">12</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">13</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">14</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">15</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">16</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">17</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">18</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">19</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">20</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">21</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">22</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">23</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full bg-secondary text-white">24</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">25</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">26</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">27</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">28</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">29</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">30</div></button>
+<button class="h-12 w-full text-text-light dark:text-text-dark text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-primary/20">31</div></button>
+</div>
+</div>
+</div>
+<!-- AI Character Mascot -->
+<div class="rounded-lg bg-card-light dark:bg-card-dark p-6 shadow-sm flex flex-col items-center text-center">
+<div class="text-7xl">☁️</div>
+<div class="relative mt-4 rounded-lg bg-primary/30 dark:bg-primary/20 p-4">
+<p class="text-text-light dark:text-text-dark text-sm font-medium">Hôm nay bạn có một ngày thật tuyệt vời! Hãy tiếp tục lan tỏa sự tích cực nhé!</p>
+<div class="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rotate-45 transform bg-primary/30 dark:bg-primary/20"></div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

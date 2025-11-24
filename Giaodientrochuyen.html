@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giao diện Trò chuyện</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4799eb",
+            "background-light": "#FAF7F5",
+            "background-dark": "#111921",
+            "pastel-blue": "#A7C7E7",
+            "pastel-pink": "#F8C8DC",
+            "soft-gray": "#B2B2B2",
+            "dark-charcoal": "#4B4B4B"
+          },
+          fontFamily: {
+            "display": ["Spline Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-dark-charcoal">
+<div class="flex h-screen w-full p-4 gap-4">
+<!-- Left Column: Main Navigation -->
+<nav class="flex h-full flex-col items-center justify-between bg-white dark:bg-background-dark/50 p-4 rounded-lg w-24">
+<div class="flex flex-col items-center gap-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAehmrj6SmsP_YsUEdi1f0JW1N7HkK7HFjZOt84fETwc6JHIl4_JGuAyDDqFHsXZ0i8OKrfZFN6DUdgKQMOXetC1zKMwnZnzCtsxfYeZLO33_Fdj7JzE79g3rXw6IyeY_H6iJLSifHXzjSVpBMavkDGxTABbHoWSBQV6S5C45gUPuVhDVMUdC4aNBqbnSBcuSqDikpekoiaNccUeBc--i5rMlpMMz3a7cufUPgSm-enmctYzqY0oLiUR-yjdzNxdHKFibb5tnS0V1bG");'></div>
+<div class="flex flex-col gap-4 items-center">
+<button class="flex items-center justify-center p-3 rounded-full bg-pastel-pink/30 text-pastel-pink">
+<span class="material-symbols-outlined fill text-2xl">chat</span>
+</button>
+<button class="flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-soft-gray">
+<span class="material-symbols-outlined text-2xl">group</span>
+</button>
+<button class="flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-soft-gray">
+<span class="material-symbols-outlined text-2xl">article</span>
+</button>
+<button class="flex items-center justify-center p-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-soft-gray">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</div>
+</div>
+<button class="flex items-center justify-center size-14 cursor-pointer overflow-hidden rounded-full bg-pastel-pink text-white">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</nav>
+<!-- Middle Column: Conversation List -->
+<div class="flex h-full w-[360px] flex-col gap-4 bg-white dark:bg-background-dark/50 p-4 rounded-lg">
+<h1 class="text-2xl font-bold px-2">Trò chuyện</h1>
+<div class="px-2">
+<label class="flex flex-col w-full">
+<div class="flex w-full flex-1 items-stretch rounded-full h-12">
+<div class="text-soft-gray flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-dark-charcoal focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-soft-gray px-2 text-base font-normal leading-normal" placeholder="Tìm kiếm" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-col overflow-y-auto">
+<!-- List Item 1 - Active -->
+<div class="flex gap-3 bg-pastel-blue/20 dark:bg-pastel-blue/10 px-4 py-3 justify-between rounded-lg cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-14" data-alt="Group chat avatar 'Tên Nhóm Dễ Thương'" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuConw_2GSwmM66I0xiRSTvbbttkGT3m5unu4_PJPShzb_DdgDQ2EpH0sVD-y1tmv_Acx_sCZGqyq5JNWRiq-BC-L3BQGzpx_cj0Iff6CrkwwC5OYwt70L1qn9sSPER7SvVvoeEyTeknb5bcwETNIyQz18CvhpTbDBJz6oWc35XjMoBA0ECicDI4hdG7b2N_oCqB_Tds9sKrrWmTWIWlSmgD-4YPCVNig5f40irvXAarhajw4poDOXOCeJOoucQS94cHy2zwWOGIlaA5");'></div>
+<div class="absolute bottom-0 right-0 size-4 bg-green-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-dark-charcoal dark:text-white text-base font-medium leading-normal">Tên Nhóm Dễ Thương</p>
+<p class="text-dark-charcoal dark:text-gray-300 text-sm font-medium leading-normal">Bạn: Tuyệt vời! Hẹn gặp lại nhé!</p>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-soft-gray text-xs font-normal leading-normal">10:42 SA</p>
+<div class="flex items-center justify-center size-5 bg-pastel-pink rounded-full text-white text-xs font-bold">2</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex gap-3 hover:bg-gray-100 dark:hover:bg-white/10 px-4 py-3 justify-between rounded-lg cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-14" data-alt="User avatar 'Sakura Chan'" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4rm2YS5KkZepspwlrqRhD_EJcOFyvdgh_MZl9E7NWXyIK92bpatn9wt6Z5C3S4L1ITAMX2DBglBpEWxx8CpdMFLzRw8QYqSWl7CyvwVa5-TrQWEmiVc3WQGdBzY13w2-DJBsk9eP1yy-6Or803_WrevEGsj1o7iG7-gqWcUhTGvmkgy1eWtXJmPPROMdkkNDLqcFrr5Xmz2_q0ihA6s4wfdywgK84tiypvmjfh2rrGuP36dYqnAvBlaQ6iOSK_ch6BCu4EqIDz4Yy");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-dark-charcoal dark:text-white text-base font-medium leading-normal">Sakura Chan</p>
+<p class="text-soft-gray text-sm font-normal leading-normal">Arigatou! (Cảm ơn bạn!)</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-soft-gray text-xs font-normal leading-normal">10:30 SA</p></div>
+</div>
+<!-- List Item 3 -->
+<div class="flex gap-3 hover:bg-gray-100 dark:hover:bg-white/10 px-4 py-3 justify-between rounded-lg cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-14" data-alt="Group chat avatar 'Hội Yêu Anime'" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSe3Zp5I0HAzln-yX30JTNtZcgDo-NDusgvXgKxYonDhH0u2VQJeH_jroYjuiSS3hFpHtYGsAXc8ke11NZnMYuq0M968zStZY21vYIYQKbp2K6WAZFX0Itm2zQHgFRplcOKyQhOXbph5nElWkKbubfLPORWAjVzjASy7Xg_J7VtsYbqfI0bvoQNGpSrMjPggJUCnvgKRJj6db0pRyFXOv9sySICd4nZg4SG9F9mZfAHOooSxD82xbLOxQ2beTVTaE8yTpvhXaKHVv3");'></div>
+<div class="absolute bottom-0 right-0 size-4 bg-green-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-dark-charcoal dark:text-white text-base font-medium leading-normal">Hội Yêu Anime</p>
+<p class="text-soft-gray text-sm font-normal leading-normal">Aiko: Tập phim mới nhất thật...</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-soft-gray text-xs font-normal leading-normal">Hôm qua</p></div>
+</div>
+</div>
+</div>
+<!-- Right Column: Active Chat Window -->
+<div class="flex flex-1 flex-col h-full rounded-lg bg-white dark:bg-background-dark/50">
+<!-- Chat Header -->
+<div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-white/10">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Group chat avatar 'Tên Nhóm Dễ Thương'" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpkzAym8gQTK-07hxi6RW6KuOyBuRfHec1M1FtGMTLCU-0EllgLP1TWRaZJQxynuBkUiY_4VHAdd3EFebJ1vTn4m1CRgGhJ_jatSzvEdd04ekAOnXCgR8malYASnobLuKO6xGzuuDJzAOUujwFVu1T9ovFG9QibWZvlCVqsCNVujlID0FgeMQY8gLoYF2LsV5iOtyMNsAf1gn4VgjkU0Bk37fihKkIZobcJkR5_2tDQyRpuR8LvE_sK3BiEsRBxBLN1Q9NytsyLjO9");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-dark-charcoal dark:text-white text-lg font-bold">Tên Nhóm Dễ Thương</h2>
+<p class="text-green-500 text-sm font-normal">Trực tuyến</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full text-soft-gray hover:bg-gray-100 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">videocam</span>
+</button>
+<button class="p-2 rounded-full text-soft-gray hover:bg-gray-100 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">call</span>
+</button>
+<button class="p-2 rounded-full text-soft-gray hover:bg-gray-100 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Message Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Received Message -->
+<div class="flex items-end gap-3 max-w-lg">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0" data-alt="User avatar 'Sakura Chan'" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChDfScG8gRkgtbz-XFtRAkfDlJBHKDLQb3PTpQt0UfFZJsbwdH6awmZ8TCegLHJNJHSNI2Esiq8vI4qWuvmvg7JwNA2NdG_7KaIMqn8mqnNJzHqwGyYwEGcheZ8TsjHwk-pltrTFWaM2N7i1yyTiM-auaSgImVtuGoCYHCOdzyh7ympqdjrMD9pacqe_ACQMExJDKyyHFqNJ0wi6UEmOSdbdZeKzOgHRLyZzBEPAnFYWrvfBTokuUgd6LWGguQecEyMEvoPNGvPXNx");'></div>
+<div class="flex flex-col gap-1">
+<div class="bg-pastel-pink/40 dark:bg-pastel-pink/20 p-3 rounded-lg rounded-bl-sm">
+<p class="text-dark-charcoal dark:text-gray-200">Chào bạn! Nhóm mình đang bàn về tập anime mới nhất đó!</p>
+</div>
+<p class="text-soft-gray text-xs px-1">Sakura Chan · 10:40 SA</p>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex flex-row-reverse items-end gap-3 ml-auto max-w-lg">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9-2Lq8qd-x2T40l_lrdl3bXnwEvZgPZidFjavku6amULhGlUAz4SlEJjj5uFZho9iFlkSRrLG_dC6U8zKbRJO2O9BAydWgYgVCmCV0eCoZ1Fj-99ahRXPnm11UbMtjmWq_1jgqg4S47A_cnMNe0X6uAGs-g5tOpPikJwByy2H_DIozjFUasGv-BodW1mQREW-BkvqPPEWWaIXAX0azhw2LbV3oFYMO-535HT0z0IZ8e2ComGwTBKpUeX3ILGtbEYRHIRs5EJ1SfI7");'></div>
+<div class="flex flex-col gap-1 items-end">
+<div class="bg-pastel-blue p-3 rounded-lg rounded-br-sm">
+<p class="text-dark-charcoal">Ồ hay quá! Mình cũng vừa xem xong.</p>
+</div>
+<div class="bg-pastel-blue p-3 rounded-lg rounded-br-sm">
+<p class="text-dark-charcoal">Tuyệt vời! Hẹn gặp lại nhé!</p>
+</div>
+<div class="flex items-center gap-1">
+<p class="text-soft-gray text-xs px-1">10:42 SA</p>
+<span class="material-symbols-outlined text-base text-pastel-blue fill">done_all</span>
+</div>
+</div>
+</div>
+<!-- Received Message -->
+<div class="flex items-end gap-3 max-w-lg">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0" data-alt="User avatar 'Aiko'" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaPM2SF5QMElw51hThX2vkp23jHyB3Jx0wTqj7YzIE8CXqcvfzzT1ZnfVUQq9mt3W15urHd5vzTpGK7GCBEZtTlZRouTefCH56UaWm92qGRagzyTi0AhhiPV72lRFyQ_nPFo0L63HoMoR6_cCVUfHg7UO029lTdjYrwRKQd4-xPJLmDJajIcdbNmnprCFVdYw4TXPr4y81tezSVC_9-K5ZUAIBw1M9aP4Vx-LQjR6S_LQK_gn8-YSRV0RylDm2s7XbP29cmu1h1QFn");'></div>
+<div class="flex flex-col gap-1">
+<div class="bg-pastel-pink/40 dark:bg-pastel-pink/20 p-3 rounded-lg rounded-bl-sm">
+<p class="text-dark-charcoal dark:text-gray-200">Mọi người thấy sao về phần hình ảnh?</p>
+</div>
+<p class="text-soft-gray text-xs px-1">Aiko · 10:43 SA</p>
+</div>
+</div>
+</div>
+<!-- Message Input Area -->
+<div class="p-4 border-t border-gray-200 dark:border-white/10 mt-auto">
+<div class="flex items-center gap-2 bg-gray-100 dark:bg-background-dark/50 rounded-lg p-2">
+<button class="p-2 rounded-full text-soft-gray hover:bg-gray-200 dark:hover:bg-white/10">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</button>
+<button class="p-2 rounded-full text-soft-gray hover:bg-gray-200 dark:hover:bg-white/10">
+<span class="material-symbols-outlined">gif_box</span>
+</button>
+<button class="p-2 rounded-full text-soft-gray hover:bg-gray-200 dark:hover:bg-white/10">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-dark-charcoal dark:text-white placeholder:text-soft-gray" placeholder="Nhập tin nhắn..." type="text"/>
+<button class="p-2 rounded-full text-pastel-pink hover:bg-pastel-pink/20">
+<span class="material-symbols-outlined fill">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>
